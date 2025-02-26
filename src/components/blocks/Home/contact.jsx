@@ -11,10 +11,42 @@ function Contact() {
     service: "camel-safari",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+
+    const botToken = "8148877406:AAG8In6luDNFabkZIgKut3z4Oyr-2bFCzVs"; // Replace with your bot token
+    const chatId = "1043162898"; // Replace with your chat ID
+
+    const message = `
+      📩 *New Contact Form Submission*
+      *Name:* ${formData.name}
+      *Email:* ${formData.email}
+      *Phone:* ${formData.phone}
+      *Service:* ${formData.service}
+      *Message:* ${formData.message}
+    `;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown",
+      }),
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      service: "camel-safari",
+    });
+
+    alert("Your message has been sent!");
   };
 
   const handleChange = (e) => {
@@ -53,9 +85,11 @@ function Contact() {
                     Location
                   </h3>
                   <p className="text-gray-600">
-                    123 Desert Road
+                    Shree shyam camel and Jeep Safari
                     <br />
-                    Pushkar, Rajasthan 305022
+                    Starling hotel, front of New horizon, Savitri Mata road
+                    <br />
+                    Ajmer, Pushkar, Rajasthan 305022
                     <br />
                     India
                   </p>
@@ -68,11 +102,7 @@ function Contact() {
                   <h3 className="font-semibold text-lg text-amber-900">
                     Phone
                   </h3>
-                  <p className="text-gray-600">
-                    +91 1234567890
-                    <br />
-                    +91 9876543210
-                  </p>
+                  <p className="text-gray-600">+91 9057281019</p>
                 </div>
               </div>
 
@@ -82,11 +112,11 @@ function Contact() {
                   <h3 className="font-semibold text-lg text-amber-900">
                     Email
                   </h3>
-                  <p className="text-gray-600">info@pushkarsafari.com</p>
+                  <p className="text-gray-600">yespalsingh5134@gmail.com</p>
                 </div>
               </div>
 
-              <div className="flex items-start">
+              {/* <div className="flex items-start">
                 <Clock className="h-6 w-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg text-amber-900">
@@ -98,14 +128,19 @@ function Contact() {
                     Sunday: 10:00 AM - 2:00 PM
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Map */}
-            <div className="mt-8 bg-gray-200 h-64 rounded-lg">
-              <div className="w-full h-full flex items-center justify-center text-gray-500">
-                Map Integration
-              </div>
+            <div className="mt-8 bg-gray-200 h-64 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.0097167439567!2d74.5444928!3d26.487631999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396bc30219fcf083%3A0x3cfc7bd4579a551b!2sShree%20shyam%20camel%20and%20Jeep%20Safari!5e0!3m2!1sen!2sin!4v1740579377107!5m2!1sen!2sin"
+                className="w-full h-full rounded-lg"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
 

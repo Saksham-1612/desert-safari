@@ -22,7 +22,7 @@ function HomePage() {
       {/* WhatsApp Icon (Bottom Right) */}
       <div className="fixed bottom-4 right-4 z-20 animate-bounce">
         <a
-          href="https://wa.me/+918881121119"
+          href="https://wa.me/+919057281019"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -32,7 +32,7 @@ function HomePage() {
 
       {/* Call Icon (Bottom Left) */}
       <div className="fixed bottom-4 left-4 z-20 animate-bounce">
-        <a href="tel:+918881121119" target="_blank" rel="noopener noreferrer">
+        <a href="tel:+919057281019" target="_blank" rel="noopener noreferrer">
           <img src="/assets/2.svg" alt="Call" className="w-12 h-12" />
         </a>
       </div>

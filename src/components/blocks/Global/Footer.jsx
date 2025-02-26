@@ -6,7 +6,10 @@ const Footer = () => {
       <div className="container">
         <p className="text-center text-sm text-white ">
           © {new Date().getFullYear()} All Rights Reserved by
-          <Link href="https://discoverarch.org/" target="_blank">
+          <Link
+            href="https://shreeshyamcamelandjeepsafari.com/"
+            target="_blank"
+          >
             Desert Safari
           </Link>
         </p>
