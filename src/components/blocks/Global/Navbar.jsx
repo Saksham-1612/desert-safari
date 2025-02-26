@@ -15,7 +15,7 @@ function Navbar() {
               width={100}
               height={100}
             />
-            <p className="font-semibold">Desert Safari</p>
+            <p className="font-semibold">Shree Shyam Camel and Jeep Safari</p>
           </Link>
         </div>
 

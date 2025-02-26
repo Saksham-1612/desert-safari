@@ -14,8 +14,8 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const botToken = "8148877406:AAG8In6luDNFabkZIgKut3z4Oyr-2bFCzVs"; // Replace with your bot token
-    const chatId = "1043162898"; // Replace with your chat ID
+    const botToken = "8101935092:AAE9AeG0pMaI-pmSLMuU3Wq9MWTR3AwZPLY"; // Replace with your bot token
+    const chatId = "6681407173"; // Replace with your chat ID
 
     const message = `
       📩 *New Contact Form Submission*
